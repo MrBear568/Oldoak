@@ -1,10 +1,13 @@
 
 html 
+    style
+        include ../styles/faqStyle.css
     head 
-        title 
+        title FAQ
     body 
         h1 dette er en text 
 
+    ul
         each text in texts 
             p= text.overskrift
-            p= text.brødtext
+            p= text.brødtext 
