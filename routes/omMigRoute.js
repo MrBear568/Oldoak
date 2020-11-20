@@ -3,8 +3,8 @@ const router = express.Router();
 const fs = require('fs').promises;
 
 router.get('/omMig', async (req, res) =>{
-    let pics = await fs.readdir(__dirname + '../pictures')
-    res.render('omMig', {pics: pics});
+    //let pics = await fs.readdir(__dirname + '../pictures')
+    res.render('omMig');
 })
 
 module.exports = router;
