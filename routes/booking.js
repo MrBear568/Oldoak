@@ -1,12 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const calendar = require('fullcalendar');
+
 
 router.get('/booking', async (req, res) => {
-    let
-    try {
-        res.render('booking', {})
-    } catch (error) {
-
-    }
+    res.render('booking', { title: 'Booking' });
 })
+
+module.exports = router;
+

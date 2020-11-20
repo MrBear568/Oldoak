@@ -28,10 +28,12 @@ db.once('open', () => console.log('Connected to mongoose'))
 const fagRoute = require('./routes/fagRoute');
 const omMigRoute = require('./routes/omMigRoute')
 app.use('/', fagRoute);
-app.use('/omMig', omMigRoute);
+app.use('/', omMigRoute);
 
 // booking
 const bookingRoute = require('./routes/booking');
+app.use('/', bookingRoute);
+app.use('/booking', bookingRoute);
 
 let server = app.listen(process.env.PORT || 8080, () => {
     let port = server.address().port;
