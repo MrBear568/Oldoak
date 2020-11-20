@@ -28,7 +28,7 @@ db.once('open', () => console.log('Connected to mongoose'))
 const fagRoute = require('./routes/fagRoute');
 const omMigRoute = require('./routes/omMigRoute')
 app.use('/', fagRoute);
-app.use('/omMig', omMigRoute);
+app.use('/', omMigRoute);
 
 // booking
 const bookingRoute = require('./routes/booking');
