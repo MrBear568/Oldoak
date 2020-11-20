@@ -24,8 +24,8 @@ db.on('error', error => console.log(error))
 db.once('open', () => console.log('Connected to mongoose'))
 
 //Routes 
-const jokesRoute = require('./routes/jokes');
-app.use('/', jokesRoute);
+const fagRoute = require('./routes/fagRoute');
+app.use('/', fagRoute);
 
 let server = app.listen(process.env.PORT || 8080, () => {
     let port = server.address().port;
