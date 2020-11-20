@@ -32,6 +32,7 @@ app.use('/', omMigRoute);
 
 // booking
 const bookingRoute = require('./routes/booking');
+app.use('/', bookingRoute);
 app.use('/booking', bookingRoute);
 
 let server = app.listen(process.env.PORT || 8080, () => {

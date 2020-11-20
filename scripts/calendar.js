@@ -4,8 +4,14 @@ document.addEventListener('DOMContentLoaded', function () {
         initialView: 'dayGridMonth',
         eventTimeFormat: eTFObject,
         displayEventEnd: true,
-        /*events: getEvents()/*/
     });
-    calendar.addEventSource(getEvents());
+    //calendar.addEventSource();
     calendar.render();
 });
+
+let eTFObject = {
+    hour: '2-digit',
+    minute: '2-digit',
+    meridiem: false,
+    hour12: false
+};

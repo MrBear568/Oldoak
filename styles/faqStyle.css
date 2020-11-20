@@ -1,0 +1,16 @@
+
+body{
+    display: grid;
+    grid-template-rows: 2;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+h1{
+    grid-row-start: 1; 
+    grid-column-start: 3;
+    border: solid; 
+}
+
+ul{
+    grid-row-start: 2;
+}
