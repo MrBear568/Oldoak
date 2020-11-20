@@ -30,6 +30,7 @@ app.use('/', fagRoute);
 
 // booking
 const bookingRoute = require('./routes/booking');
+app.use('/booking', bookingRoute);
 
 let server = app.listen(process.env.PORT || 8080, () => {
     let port = server.address().port;
