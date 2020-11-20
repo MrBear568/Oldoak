@@ -8,14 +8,14 @@ if (process.env.NODE_ENV !== 'production') {
 
 const bodyparser = require('body-parser');
 app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({extended: false}));
+app.use(bodyparser.urlencoded({ extended: false }));
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useCreateIndex: true,
-    autoIndex: true, 
+    autoIndex: true,
     useUnifiedTopology: true
 });
 
@@ -23,9 +23,13 @@ const db = mongoose.connection
 db.on('error', error => console.log(error))
 db.once('open', () => console.log('Connected to mongoose'))
 
-//Routes 
+//Routes
+// FAQ 
 const fagRoute = require('./routes/fagRoute');
 app.use('/', fagRoute);
+
+// booking
+const bookingRoute = require('./routes/booking');
 
 let server = app.listen(process.env.PORT || 8080, () => {
     let port = server.address().port;
