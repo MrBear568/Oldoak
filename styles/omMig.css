@@ -1,0 +1,18 @@
+
+body{
+    display: grid;
+    grid-template-rows: 3;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+h1{
+    grid-row-start: 1; 
+    grid-column-start: 3;
+    border: solid; 
+}
+
+img{
+    position: relative;
+    height: 350;
+    width: 350;
+}
