@@ -36,6 +36,10 @@ const bookingRoute = require('./routes/booking');
 app.use('/', bookingRoute);
 app.use('/booking', bookingRoute);
 
+// pakkeløsning
+const pakkeløsningRoute = require('./routes/pakkeløsning')
+app.use('/', pakkeløsningRoute)
+
 let server = app.listen(process.env.PORT || 8080, () => {
     let port = server.address().port;
     console.log(`server kører på port ${port}`);
