@@ -3,13 +3,14 @@ html
     style
         include ../styles/faqStyle.css
     head 
-        title FAQ
+        title FAQ'S
     body 
-        h1 dette er en text 
+        h1 FAQ'S
+        div(class="linje")
 
-    ul
+    div(class="samlet")
         each text in texts 
-            p= text.overskrift
-            p= text.brødtext 
-    
-     a(href= fil) #{link}
+            div(class='under')
+                div(class='under2')
+                    h2(class="overskrift")= text.overskrift
+                    p(class="text")= text.txt
