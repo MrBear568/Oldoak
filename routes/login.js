@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/auth', (req, res) => {
+router.get('/auth', async (req, res) => {
     res.render('login');
 });
 
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
     const user = {
         username: req.body.username, 
         password: req.body.password
