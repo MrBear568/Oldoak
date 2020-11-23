@@ -5,16 +5,34 @@ html(lang="en")
             include ../scripts/calendar.js
         style
             include ../node_modules/fullcalendar/main.css
+            include ../styles/booking.css
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title #{title}
     body
-        div(class='kontaktoplysninger')
+    div(class="wrapper")
+        div(class='OWInfo')
             P Email: oldoakevita@gmail.com
             p Mobil: 53816564
-        div(class='calendar')
+        div(class='kundeInfo')
+            input(type="text" id="emne" placeholder="Emne (Bryllup, konfir. osv.)")
+            br
+            br
+            input(type="email", name="email", placeholder="E-mail")
+            br
+            br
+            input(type="text", name="navn", placeholder="Navn")
+            br
+            br
+            input(type="number", name="tlfNummer", placeholder="Telefonnummer")
+            br
+            br
+            textarea(id="kundeBesked", cols="30", rows="10", placeholder="Din besked til Oaldoak Weddings, heriblandt ønsker eller specielle behov.")
+            br
+            br
+            input(type="text", id="dato", placeholder="Vælg dato i kalender")
+        div(class='fullCalendar')
             #calendar
-        div(class='kundeoplysning')
-        
+            
 
 

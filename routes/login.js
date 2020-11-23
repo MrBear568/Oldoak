@@ -1,12 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-
-app.get('/login', (req, res) => {
+router.get('/auth', async (req, res) => {
     res.render('login');
 });
 
-app.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
     const user = {
         username: req.body.username, 
         password: req.body.password
@@ -20,5 +19,11 @@ app.post('/login', (req, res) => {
     }
 
 });
+/*
+function checkUser(user) {
+    // ned i db og find user.username, user.password (hashed)
+    return true;
+}
+*/
 
 module.exports = router;

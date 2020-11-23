@@ -11,6 +11,10 @@ const bodyparser = require('body-parser');
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 
+const session = require('express-session');
+const { transcode } = require('buffer');
+app.use(session({secret: 'F55A71BE-952A-4956-BBCF-F8CC8DE5D978'}));
+
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise
 mongoose.connect(process.env.DATABASE_URL, {
@@ -37,8 +41,7 @@ app.use('/', bookingRoute);
 app.use('/booking', bookingRoute);
 
 // pakkeløsning
-const pakkeløsningRoute = require('./routes/pakkeløsning');
-const pakkeløsning = require('./models/pakkeløsning');
+const pakkeløsningRoute = require('./routes/pakkeløsning')
 app.use('/', pakkeløsningRoute)
 
 let server = app.listen(process.env.PORT || 8080, () => {

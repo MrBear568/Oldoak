@@ -4,9 +4,20 @@ document.addEventListener('DOMContentLoaded', function () {
         initialView: 'dayGridMonth',
         eventTimeFormat: eTFObject,
         displayEventEnd: true,
+        contentHeight: 600,
+        selectable: true,
+        unselectAuto: true,
+        dateClick: function (info) {
+            let valgtDato = info.dateStr;
+            console.log(valgtDato);
+            let datoTA = document.getElementById('dato');
+            datoTA.value = valgtDato;
+
+        }
     });
     //calendar.addEventSource();
     calendar.render();
+
 });
 
 let eTFObject = {
