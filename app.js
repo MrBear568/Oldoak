@@ -11,10 +11,6 @@ const bodyparser = require('body-parser');
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 
-const session = require('express-session');
-const { transcode } = require('buffer');
-app.use(session({secret: 'F55A71BE-952A-4956-BBCF-F8CC8DE5D978'}));
-
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise
