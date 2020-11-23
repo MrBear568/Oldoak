@@ -1,11 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-const session = require('express-session');
-const { transcode } = require('buffer');
-app.use(session({secret: 'F55A71BE-952A-4956-BBCF-F8CC8DE5D978'}));
-
-
 app.get('/auth', (req, res) => {
     res.render('login');
 });
