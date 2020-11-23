@@ -21,4 +21,9 @@ app.post('/login', (req, res) => {
 
 });
 
+function checkUser(user) {
+    // ned i db og find user.username, user.password (hashed)
+    return true;
+}
+
 module.exports = router;
