@@ -44,6 +44,10 @@ app.use('/booking', bookingRoute);
 const pakkeløsningRoute = require('./routes/pakkeløsning')
 app.use('/', pakkeløsningRoute)
 
+//login
+const loginRoute = require('./routes/login')
+app.use('/', loginRoute);
+
 let server = app.listen(process.env.PORT || 8080, () => {
     let port = server.address().port;
     console.log(`server kører på port ${port}`);
