@@ -37,7 +37,8 @@ app.use('/', bookingRoute);
 app.use('/booking', bookingRoute);
 
 // pakkeløsning
-const pakkeløsningRoute = require('./routes/pakkeløsning')
+const pakkeløsningRoute = require('./routes/pakkeløsning');
+const pakkeløsning = require('./models/pakkeløsning');
 app.use('/', pakkeløsningRoute)
 
 let server = app.listen(process.env.PORT || 8080, () => {
