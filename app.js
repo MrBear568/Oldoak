@@ -11,6 +11,9 @@ const bodyparser = require('body-parser');
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 
+const session = require('express-session');
+const { transcode } = require('buffer');
+
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise
 mongoose.connect(process.env.DATABASE_URL, {
