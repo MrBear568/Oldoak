@@ -1,9 +1,13 @@
 .column {
     float: left;
-    width: 24.50%;
+    width: 19.5%;
     text-align: center;
-    border:3px solid black;
-  }
+    border-style: solid;
+    border-color: grey;
+    margin: 25px;
+    border-radius: 5px;
+}
+
   
 .pakkeløsningrække::after {  
     content: "";
@@ -11,6 +15,19 @@
     display: table;
 }
 
+.pakkeløsningrække {
+    padding: 10px;
+}
+
 h1 {
     text-align: center;
 }
+
+.navn {
+    text-decoration: underline;
+}
+
+p {
+    font-family: "Times New Roman", Times, serif;
+}
+

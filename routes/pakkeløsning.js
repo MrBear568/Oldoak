@@ -3,8 +3,8 @@ const router = express.Router();
 const controller = require('../controllers/pakkeløsning');
 
 router.get('/priser', async (req, res) => {
-    controller.getPakkeløsninger();
-    res.render('pakkeløsning', {pakkeløsninger: pakkeløsninger});
+    const pakkeløsninger = await controller.getPakkeløsninger();
+    res.render('pakkeløsning', {pakkelosninger: pakkeløsninger});
 });
 
 module.exports = router;
