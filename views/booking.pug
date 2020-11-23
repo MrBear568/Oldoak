@@ -11,26 +11,28 @@ html(lang="en")
         title #{title}
     body
     div(class="wrapper")
+        div(class="info")
+            p Herunder kan du se min kalender som fortæller om jeg er ledig på din ønskede dato.
+            p Hvis du ønsker at kontakte mig, kan du enten kontakte mig via min e-mail, tlf. nummer, eller udfylde en kontaktformular.
+            p Jeg vil derefter vende tilbage hurtigst muligt.
+
         div(class='OWInfo')
             P Email: oldoakevita@gmail.com
             p Mobil: 53816564
         div(class='kundeInfo')
             input(type="text" id="emne" placeholder="Emne (Bryllup, konfir. osv.)")
             br
-            br
             input(type="email", name="email", placeholder="E-mail")
-            br
             br
             input(type="text", name="navn", placeholder="Navn")
             br
-            br
             input(type="number", name="tlfNummer", placeholder="Telefonnummer")
-            br
             br
             textarea(id="kundeBesked", cols="30", rows="10", placeholder="Din besked til Oaldoak Weddings, heriblandt ønsker eller specielle behov.")
             br
-            br
             input(type="text", id="dato", placeholder="Vælg dato i kalender")
+            br
+            button(type="submit", name="submit") Send formular
         div(class='fullCalendar')
             #calendar
             
