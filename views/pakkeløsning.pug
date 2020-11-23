@@ -7,10 +7,16 @@ html
     body
         h1(class='overskrift') Pakkeløsninger  
         div(class='pakkeløsningrække')
-            div(class='column') a
-            div(class='column') b
-            div(class='column') c
-            div(class='column') d
+            ul
+                each pakkelosning in pakkelosninger
+                    div(class='column')
+                        p(class= 'navn')= pakkelosning.pakkeNavn
+                        p(class= 'pris')= pakkelosning.pris
+                        p(class= 'beskrivelse')= pakkelosning.beskrivelse
+                    
+                    
+
+            
 
 
 
