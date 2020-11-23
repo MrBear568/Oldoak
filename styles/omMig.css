@@ -1,18 +1,46 @@
 
 body{
     display: grid;
-    grid-template-rows: 3;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 6;
+    grid-template-columns: 25% 25% 5% 20% 25%;
+}
+
+.box1{
+    grid-column-start: 2;
+    float: left;
+}
+
+.box2{
+    grid-column-start: 4;
+    float: right;
 }
 
 h1{
     grid-row-start: 1; 
-    grid-column-start: 3;
     border: solid; 
 }
 
+h2{
+    grid-row-start: 2; 
+}
+
+h3{
+    grid-row-start: 3; 
+}
+
+#mail{
+    grid-row-start: 4; 
+}
+
+#distance{
+    grid-row-start: 5; 
+    border-top: solid;
+}
+
+#info{
+    grid-row-start: 6; 
+}
+
 img{
-    position: relative;
     height: 350;
-    width: 350;
 }
