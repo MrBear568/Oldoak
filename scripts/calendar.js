@@ -7,12 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
         contentHeight: 600,
         selectable: true,
         unselectAuto: true,
+        locale: 'dk',
+        weekNumbers: true,
         dateClick: function (info) {
             let valgtDato = info.dateStr;
-            console.log(valgtDato);
             let datoTA = document.getElementById('dato');
             datoTA.value = valgtDato;
-
         }
     });
     //calendar.addEventSource();
