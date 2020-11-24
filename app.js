@@ -48,6 +48,14 @@ app.use('/', pakkeløsningRoute)
 const loginRoute = require('./routes/login')
 app.use('/', loginRoute);
 
+// oprettelse af login
+//const controller = require('./controllers/login')
+//controller.opretLogin('admin', 'nimda')
+
+//oprettelse af pakkeløsning
+//const controller = require('./controllers/pakkeløsning')
+//controller.opretPakkeløsning('pakkenavn', 123, 'beskrivelse')
+
 let server = app.listen(process.env.PORT || 8080, () => {
     let port = server.address().port;
     console.log(`server kører på port ${port}`);
