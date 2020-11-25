@@ -1,6 +1,6 @@
 .logo{
     grid-column-start: 2;
-    position: fixed;
+    position: absolute;
     top: 0;
     text-align: center;
     margin-right: 60%;
