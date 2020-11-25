@@ -7,5 +7,6 @@ html
     body 
         h1 dette er en tekst
         img(src="/static/pictures/galleri/Screenshot_1.png")
-        
+        each link in billede
+            a(href= link) #{link}
     
