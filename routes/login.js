@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/login');
 
-const logins = await controller.getLogins();
+const logins = controller.getLogins();
 
 router.get('/auth', async (req, res) => {
     res.render('login');
