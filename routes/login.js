@@ -10,43 +10,41 @@ router.get('/login', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     /*
-    const logins = await controller.getLogins();
     const user = {
-        username: logins.getLogins.username, 
-        password: logins.getLogins.password
+        usernamegemt: logins.getLogins.username, 
+        passwordgemt: logins.getLogins.password
     }
     */
+    
     const user = {
     username: req.body.username, 
     password: req.body.password
     }
     console.log(user);
+    console.log(logins);
     if (checkUser(user)) {
         req.session.isLoggedIn = true;
         res.redirect('/admin')
-        res.render('admin')
 
         //res.render('admin', {login: logins});
     } else {
-        res.redirect('/');
+        res.redirect('/home');
     }
 
 });
-/*
+
 router.get('/admin', async (req,res) => {
-    if (req.session.isLoggedIn = true) {
+    if (req.session.isLoggedIn === true) {
         res.render('admin')
+    } else {
+        res.redirect('/login')
     }
 });
-*/
+
 
 
 function checkUser(user) {
-    /*
-    if (req.body.username === user.getLogins.username && req.body.password === user.getLogins.password) 
-    return true;
-    */
-    if (user.password === "admin" && user.username === "admin") {
+    if (user.password === logins.password && user.username === logins.username) {
     return true;
     } else {
     return false;
