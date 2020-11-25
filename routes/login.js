@@ -22,11 +22,13 @@ router.post('/login', async (req, res) => {
     }
     console.log(user);
     console.log(logins);
+    console.log(user.username); // giver det man skriver i username input
+    console.log(user.password) // giver det man skriver i password input
+    console.log(logins.password) // undefiend
+    console.log(logins.username) // undefiend
     if (checkUser(user)) {
         req.session.isLoggedIn = true;
         res.redirect('/admin')
-
-        //res.render('admin', {login: logins});
     } else {
         res.redirect('/home');
     }
