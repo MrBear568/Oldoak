@@ -3,7 +3,19 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: red;
+    background-color: lightgrey;
     color: white;
     text-align: center;
+}
+
+.content {
+    float: center;
+    padding-top: 2%;
+}
+
+img {
+    height: 30px;
+    width: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
