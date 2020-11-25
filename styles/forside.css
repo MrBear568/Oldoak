@@ -1,0 +1,36 @@
+
+body{
+    display: grid;
+    grid-template-rows: 2;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+header{
+    display: grid;
+    grid-template-rows: 6;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+#home{
+
+}
+
+#kontakt{
+
+}
+
+#priser{
+
+}
+
+#galleri{
+
+}
+
+#mig{
+
+}
+
+#faq{
+    
+}
