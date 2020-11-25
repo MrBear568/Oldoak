@@ -1,19 +1,13 @@
-body{
-    display: grid;
-    grid-template-rows: 1;
-    grid-template-columns: 45% 10% 45%;
-}
-
-.head{
+.logo{
     grid-column-start: 2;
     position: fixed;
-    top: auto;
+    top: 0;
     text-align: center;
     margin-right: 60%;
     margin-left: 40%;
 }
 
-.box1{
+.links1{
     grid-column-start: 1;
     position: absolute;
     top: 70;
@@ -26,7 +20,7 @@ body{
     text-decoration: none;
 }
 
-.box2{
+.links2{
     grid-column-start: 3;
     position: absolute;
     top: 70;
@@ -39,7 +33,7 @@ body{
     text-decoration: none;
 }
 
-img {
+.logoPic {
     height: 130;
 }
 

@@ -1,5 +1,9 @@
 
-body{
+header{
+    margin-bottom: 10%;
+}
+
+.grid{
     display: grid;
     grid-template-rows: 6;
     grid-template-columns: 25% 25% 5% 20% 25%;
@@ -41,6 +45,7 @@ h3{
     grid-row-start: 6; 
 }
 
-img{
+.evita{
+    margin-top: 25%;
     height: 350;
 }
