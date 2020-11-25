@@ -44,7 +44,10 @@ app.use('/', galleri);
 // booking
 const bookingRoute = require('./routes/booking');
 app.use('/', bookingRoute);
-app.use('/booking', bookingRoute);
+
+//api
+const apiRoute = require('./routes/api');
+app.use('/', apiRoute);
 
 // pakkeløsning
 const pakkeløsningRoute = require('./routes/pakkeløsning')
