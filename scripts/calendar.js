@@ -1,5 +1,3 @@
-const controller = require('../controllers/booking');
-
 document.addEventListener('DOMContentLoaded', function () {
     let calendarEl = document.getElementById('calendar');
     calendar = new FullCalendar.Calendar(calendarEl, {
