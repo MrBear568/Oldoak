@@ -9,6 +9,13 @@ document.addEventListener('DOMContentLoaded', function () {
         unselectAuto: true,
         locale: 'dk',
         weekNumbers: true,
+        showNonCurrentDates: false,
+        dayRender: async function (date, cell) {
+            let bookinger = await controller.hentBookinger();
+            for (booking of bookinger) {
+                console.log(booking);
+            }
+        },
         dateClick: function (info) {
             let valgtDato = info.dateStr;
             let datoTA = document.getElementById('dato');

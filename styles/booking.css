@@ -33,9 +33,13 @@ input {
     padding-left: 50px;
 }
 
-#kundeBesked {
+#besked {
     resize: none;
     width: 400px;
     height: 100;
     margin-bottom: 50px;
+}
+
+label {
+    color: red;
 }
