@@ -15,3 +15,5 @@ router.get('/api/bookinger', async (req, res) => {
         console.log(error);
     }
 })
+
+module.exports = router;
