@@ -20,19 +20,25 @@ html(lang="en")
             P Email: oldoakevita@gmail.com
             p Mobil: 53816564
         div(class='kundeInfo')
-            input(type="text" id="emne" placeholder="Emne (Bryllup, konfir. osv.)")
-            br
-            input(type="email", name="email", placeholder="E-mail")
-            br
-            input(type="text", name="navn", placeholder="Navn")
-            br
-            input(type="number", name="tlfNummer", placeholder="Telefonnummer")
-            br
-            textarea(id="kundeBesked", cols="30", rows="10", placeholder="Din besked til Oaldoak Weddings, heriblandt ønsker eller specielle behov.")
-            br
-            input(type="text", id="dato", placeholder="Vælg dato i kalender")
-            br
-            button(type="submit", name="submit") Send formular
+            form(action="/booking", method="post")
+                label(for="emne", id="emneerror")
+                input(type="text", name="emne", placeholder="Emne (Bryllup, konfir. osv.)") 
+                br
+                label(for="email", id="emailerror")
+                input(type="email", name="email", placeholder="E-mail")
+                br
+                label(for="navn", id="navnerror")
+                input(type="text", name="navn", placeholder="Navn")
+                br
+                label(for="number", id="tlfNummererror")
+                input(type="number", name="tlfNummer", placeholder="Telefonnummer")
+                br
+                textarea(name="besked", id="besked", cols="30", rows="10", placeholder="Din besked til Oaldoak Weddings, heriblandt ønsker eller specielle behov.")
+                br
+                label(for="dato", id="datoerror")
+                input(type="text", name="dato", id="dato", placeholder="Vælg dato i kalender")
+                br
+                button(type="submit", name="submit") Send formular
         div(class='fullCalendar')
             #calendar
             
