@@ -35,6 +35,10 @@ const omMigRoute = require('./routes/omMigRoute')
 app.use('/', fagRoute);
 app.use('/', omMigRoute);
 
+//galleri
+const galleri = require('./routes/galleri')
+app.use('/', galleri);
+
 // booking
 const bookingRoute = require('./routes/booking');
 app.use('/', bookingRoute);
