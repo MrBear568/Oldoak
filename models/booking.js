@@ -5,8 +5,9 @@ const Booking = new mongoose.Schema({
     kundeEmail: String,
     kundeNavn: String,
     kundeTlf: String,
+    besked: String,
     dato: Date,
-    status: Boolean,
+    status: { type: Boolean, default: false }
 });
 
 
