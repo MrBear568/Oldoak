@@ -6,7 +6,10 @@ html
         title galleri 
     body 
         div(class="samlet")   
-            h2(id="sommer" type="button") Sommmer
+            //- Sådan laves en kommentar  
+        form(method="post" action="/galleri")
+            button(type="checkbox") sommerKnap
+            h2(id="sommer" type="sumbit") Sommmer
             a(href='https://github.com/LouieAdamian')
                 img(src="/static/pictures/galleri/Screenshot_1.png")
             h2 Vinter

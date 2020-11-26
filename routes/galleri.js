@@ -7,9 +7,12 @@ const fs = require('fs').promises
 
 router.get('/galleri', async (req, res) =>{
     billede = await fs.readdir(__dirname + '/billeder');
-    console.log(billede);
     res.render('galleri');
     //{filnavne}
+})
+
+router.post('/galleri', async (req, res) =>{
+    console.log('forbindelse');
 })
 
 
