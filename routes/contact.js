@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/booking');
+const controller = require('../controllers/contact');
 const Mail = require('../models/mail');
 const nodemailer = require('nodemailer');
 let today = new Date();
@@ -10,11 +10,11 @@ let yyyy = today.getFullYear();
 today = yyyy + '-' + mm + '-' + dd;
 
 
-router.get('/booking', async (req, res) => {
-    res.render('booking', { title: 'Booking' });
+router.get('/contact', async (req, res) => {
+    res.render('contact', { title: 'Contact' });
 });
 
-router.post('/booking', async (req, res) => {
+router.post('/contact', async (req, res) => {
 
     const emne = req.body.emne;
     const email = req.body.email;
