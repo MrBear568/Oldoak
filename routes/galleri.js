@@ -13,7 +13,9 @@ router.get('/galleri', async (req, res) =>{
 
 router.post('/galleri', async (req, res) =>{
     let test = req.body.sommer;
-    console.log("den kører på: " + test);
+    if(test === undefined){
+        console.log("den kører på: " + test);
+    }
 })
 
 
