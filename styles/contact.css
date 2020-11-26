@@ -6,7 +6,7 @@
 }
 
 .info {
-    margin-top: 15%;
+    margin-top: 10%;
     grid-column: 1;
     grid-row: 1;
 }
@@ -21,7 +21,6 @@
     grid-column: 2;
     grid-row: 2;
     padding-left: 70px;
-    padding-top: 60px;
 }
 
 input {

@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         eventTimeFormat: eTFObject,
         displayEventEnd: true,
         contentHeight: 600,
+        height: 430,
         selectable: true,
         unselectAuto: true,
         locale: 'dk',
