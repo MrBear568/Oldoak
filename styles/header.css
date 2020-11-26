@@ -1,40 +1,52 @@
+.hoved {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    color: white;
+    text-align: center;
+}
+
+.indhold{
+    float: center;
+    padding-bottom: 7%;
+}
+
 .logo{
     grid-column-start: 2;
     position: absolute;
-    top: 0;
     text-align: center;
-    margin-right: 60%;
-    margin-left: 40%;
+    top: 0;
+    left: 41%;
 }
 
 .links1{
     grid-column-start: 1;
     position: absolute;
-    top: 70;
+    margin-top: 3%;
     right:60%;
-    width: 19%;
-    background-color: white;
+    width: 12%;
     color: black;
     text-align: center;
-    font-size: 150%;
+    font-size: 120%;
     text-decoration: none;
 }
 
 .links2{
     grid-column-start: 3;
     position: absolute;
-    top: 70;
-    left: 55%;
-    width: 19%;
-    background-color: white;
+    margin-top: 3%;
+    left: 53%;
+    width: 14%;
     color: black;
     text-align: center;
-    font-size: 150%;
+    font-size: 120%;
     text-decoration: none;
 }
 
 .logoPic {
-    height: 130;
+    height: 105;
 }
 
 #link{
