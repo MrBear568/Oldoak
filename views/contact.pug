@@ -1,5 +1,6 @@
 html(lang="en")
     head
+    include header.pug
         script  
             include ../node_modules/fullcalendar/main.js
             include ../scripts/calendar.js
@@ -41,6 +42,6 @@ html(lang="en")
                 button(type="submit", name="submit") Send formular
         div(class='fullCalendar', id='calendar')
             #calendar
-            
+    include footer.pug
 
 
