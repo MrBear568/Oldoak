@@ -10,5 +10,4 @@ const Booking = new mongoose.Schema({
     status: { type: Boolean, default: false }
 });
 
-
 module.exports = mongoose.model('Booking', Booking);
