@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/booking');
+const Mail = require('../models/mail');
+const nodemailer = require('nodemailer');
 let today = new Date();
 let dd = String(today.getDate()).padStart(2, '0');
 let mm = String(today.getMonth() + 1).padStart(2, '0');
@@ -30,6 +32,32 @@ router.post('/booking', async (req, res) => {
                 res.redirect('/booking')
 
             });
+            let mail = Mail.find().where('email').equals('owmailbot@gmail.com');
+
+            console.log(mail);
+
+            let transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: 'owmailbot@gmail.com',
+                    pass: 'gammeleg7700'
+                }
+            })
+
+            let mailOptions = {
+                from: 'owmailbot@gmail.com',
+                to: 'mikahoejegaard@gmail.com',
+                subject: emne,
+                text: besked
+            }
+
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
+                    console.log(error);
+                } else {
+                    console.log('Mail er sendt: ' + info.response);
+                }
+            })
         }
     } catch (error) {
         console.log(error)
