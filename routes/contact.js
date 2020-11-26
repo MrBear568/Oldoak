@@ -28,8 +28,8 @@ router.post('/contact', async (req, res) => {
         if (dato <= today) {
             console.log('Datoen er før');
         } else {
-            await controller.opretBooking(emne, email, navn, tlfnummer, besked, dato).then(() => {
-                res.redirect('/booking')
+            await controller.opretContact(emne, email, navn, tlfnummer, besked, dato).then(() => {
+                res.redirect('/contact');
 
             });
             let mail = Mail.find().where('email').equals('owmailbot@gmail.com');
