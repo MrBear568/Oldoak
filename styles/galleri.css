@@ -1,5 +1,34 @@
 
+div{
+    margin-top: 3%;
+    display: grid;
+    grid-template-rows: 2;  
+    margin-left: 14%;
+}
 
-img{
-    height: 300;
+h2{
+    margin-top: 30%;
+    grid-row-start: 1;
+    margin-left: 5%;
+    float: left;
+}
+
+button{
+    margin-top: 30%;
+    grid-row-start: 1;
+    margin-left: 5%;
+    float: left; 
+}
+
+#sommer{
+    margin-left: 1%;
+}
+
+img{    
+    text-align: center;
+    margin-left: -24%; 
+    margin-right: auto;
+    grid-row-start: 2;
+    height: 180;
+    float: left;
 }
