@@ -1,7 +1,7 @@
-const Booking = require('../models/booking');
+const Contact = require('../models/contact');
 
 exports.opretBooking = function (emne, kundeEmail, kundeNavn, kundeTlf, besked, dato, status) {
-    return Booking.create({
+    return Contact.create({
         emne,
         kundeEmail,
         kundeNavn,
@@ -13,9 +13,9 @@ exports.opretBooking = function (emne, kundeEmail, kundeNavn, kundeTlf, besked, 
 }
 
 exports.hentBookinger = async function () {
-    return await Booking.find().exec();
+    return await Contact.find().exec();
 }
 
 exports.hentBookingPåDato = async function (dato) {
-    return await Booking.find().where('dato').equals(dato).exec();
+    return await Contact.find().where('dato').equals(dato).exec();
 }

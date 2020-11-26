@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function () {
     let calendarEl = document.getElementById('calendar');
     calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
+        validRange: {
+            start: today,
+        },
         eventTimeFormat: eTFObject,
         displayEventEnd: true,
         contentHeight: 600,
@@ -24,21 +27,16 @@ document.addEventListener('DOMContentLoaded', function () {
         //         console.log(d);
         //     }
         // },
-        dayRender: function (date, cell) {
-            if (today === date.getDate()) {
-                cell.css("background-color", "red");
-            }
-        },
         dateClick: function (info) {
             let valgtDato = info.dateStr;
             let datoTA = document.getElementById('dato');
             datoTA.value = valgtDato;
-        }
+        },
     });
-    calendar.addEventSource();
+
+    // calendar.addEventSource();
     calendar.render();
 });
-
 
 let eTFObject = {
     hour: '2-digit',

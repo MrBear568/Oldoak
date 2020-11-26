@@ -14,19 +14,18 @@
 }
 
 .logo{
-    grid-column-start: 2;
     position: absolute;
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     top: 0;
-    left: 41%;
+    width: 100%;
 }
 
 .links1{
-    grid-column-start: 1;
     position: absolute;
     margin-top: 3%;
-    right:60%;
-    width: 12%;
+    right:62%;
+    width: 14%;
     color: black;
     text-align: center;
     font-size: 120%;
@@ -34,16 +33,17 @@
 }
 
 .links2{
-    grid-column-start: 3;
     position: absolute;
     margin-top: 3%;
-    left: 53%;
-    width: 14%;
+    left: 60%;
+    width: 20%;
     color: black;
     text-align: center;
     font-size: 120%;
     text-decoration: none;
 }
+
+
 
 .logoPic {
     height: 105;
@@ -52,6 +52,13 @@
 #link{
     text-decoration: none;
     color: black;
-    margin-right: 5%;
+    margin-right: 8%;
     font-style: italic;
 }
+
+#link:hover{
+    color: black;
+    text-decoration: underline;
+}
+
+

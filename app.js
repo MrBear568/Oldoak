@@ -42,8 +42,8 @@ const galleri = require('./routes/galleri')
 app.use('/', galleri);
 
 // booking
-const bookingRoute = require('./routes/booking');
-app.use('/', bookingRoute);
+const contactRoute = require('./routes/contact');
+app.use('/', contactRoute);
 
 //api
 const apiRoute = require('./routes/api');
