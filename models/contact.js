@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Booking = new mongoose.Schema({
+const Contact = new mongoose.Schema({
     emne: String,
     kundeEmail: String,
     kundeNavn: String,
@@ -10,4 +10,4 @@ const Booking = new mongoose.Schema({
     status: { type: Boolean, default: false }
 });
 
-module.exports = mongoose.model('Booking', Booking);
+module.exports = mongoose.model('Contact', Contact);
