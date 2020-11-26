@@ -14,7 +14,7 @@ h1{
     border-left: 1px solid rgb(212, 212, 212);
     height: 100%;
     float: left;
-    position: fixed;
+    position: absolute;
     margin-left: -100px; 
     top: 27%;
     left: 56%
