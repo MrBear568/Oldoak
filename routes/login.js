@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/login');
 
-const logins = controller.getLogins();
+// controller.getUser()
 
 router.get('/login', async (req, res) => {
     res.render('login');
@@ -21,11 +21,11 @@ router.post('/login', async (req, res) => {
     password: req.body.password
     }
     console.log(user);
-    console.log(logins);
+    console.log(controller.getLogins());
     console.log(user.username); // giver det man skriver i username input
     console.log(user.password) // giver det man skriver i password input
-    console.log(logins.password) // undefiend
-    console.log(logins.username) // undefiend
+    console.log(controller.getLogins().password) // undefiend
+    console.log(controller.getLogins().username) // undefiend
     if (checkUser(user)) {
         req.session.isLoggedIn = true;
         res.redirect('/admin')
@@ -46,7 +46,7 @@ router.get('/admin', async (req,res) => {
 
 
 function checkUser(user) {
-    if (user.password === logins.password && user.username === logins.username) {
+    if (user.password === controller.getLogins().password && user.username === controller.getLogins().username) {
     return true;
     } else {
     return false;
