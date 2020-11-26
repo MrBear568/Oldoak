@@ -1,13 +1,20 @@
 const express = require('express');
+const { pathToFileURL } = require('url');
 const router = express.Router();
 const fs = require('fs').promises
 
 
 
 router.get('/galleri', async (req, res) =>{
-    let billeder = require('../public/pictures/galleri');
-    res.render('galleri', {billede: billeder});
+    billede = await fs.readdir(__dirname + '/billeder');
+    res.render('galleri');
+    //{filnavne}
 })
+
+router.post('/galleri', async (req, res) =>{
+    console.log('forbindelse');
+})
+
 
 
 module.exports = router;

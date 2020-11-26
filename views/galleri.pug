@@ -5,8 +5,17 @@ html
     header 
         title galleri 
     body 
-        h1 dette er en tekst
-        img(src="/static/pictures/galleri/Screenshot_1.png")
-        each link in billede
-            a(href= link) #{link}
+        div(class="samlet")   
+            //- Sådan laves en kommentar  
+        form(method="post" action="/galleri")
+            button(type="checkbox") sommerKnap
+            h2(id="sommer" type="sumbit") Sommmer
+            a(href='https://github.com/LouieAdamian')
+                img(src="/static/pictures/galleri/Screenshot_1.png")
+            h2 Vinter
+            img(src="/static/pictures/galleri/Screenshot_1.png")
+            h2 Efterår
+            img(src="/static/pictures/galleri/Screenshot_1.png")
+            h2 Forår
+            img(src="/static/pictures/galleri/Screenshot_1.png")
     
