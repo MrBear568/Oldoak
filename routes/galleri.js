@@ -12,7 +12,8 @@ router.get('/galleri', async (req, res) =>{
 })
 
 router.post('/galleri', async (req, res) =>{
-    console.log('forbindelse');
+    let test = req.body.sommer;
+    console.log("den kører på: " + test);
 })
 
 
