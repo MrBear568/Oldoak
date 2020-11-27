@@ -1,14 +1,16 @@
 const should = require('should')
+// const {opretMail} = require('../controllers/mail.js')
+const mail = require('../controllers/mail.js')
 
-var mail = {
-    ejerNavn: 'Mika',
-    mail: 'oldoak@gmail.com'
-};
-
-describe('Mail controller test - promise', function () {
+describe('controller test - promise', function () {
     it('test', async () => {
-      mail.ejerNavn.should.be.equals('Mika')
-      mail.mail.should.be.equals('oldoak@gmail.com')
+      var mail = {
+        ejerNavn: 'Mika',
+        mail: 'oldoak@gmail.com'
+    };
+      const mailResult = mail.opretMail('Mika', 'oldoak@gmail.com')
+      mailResult.ejerNavn.should.be.equals('Mika')
+      mailResult.mail.should.be.equals('oldoak@gmail.com')
     });
   });
   
