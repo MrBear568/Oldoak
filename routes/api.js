@@ -8,9 +8,9 @@ router.get('/', (req, res) => {
 
 router.get('/api/bookinger', async (req, res) => {
     try {
-        const bookinger = await controller.hentBookinger();
-        const bookingerJSON = JSON.stringify(bookinger);
-        res.send(bookingerJSON)
+        const contacts = await controller.hentContacts();
+        const contactsJSON = JSON.stringify(contacts);
+        res.send(contactsJSON)
     } catch (error) {
         console.log(error);
     }
