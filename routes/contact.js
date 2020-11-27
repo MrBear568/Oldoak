@@ -28,7 +28,7 @@ router.post('/contact', async (req, res) => {
         if (dato <= today) {
             console.log('Datoen er før');
         } else {
-            await controller.opretContact(emne, email, navn, tlfnummer, besked, dato).then(() => {
+            await controller.opretRequest(emne, email, navn, tlfnummer, besked, dato).then(() => {
                 res.redirect('/contact');
 
             });
