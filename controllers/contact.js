@@ -1,7 +1,7 @@
-const Contact = require('../models/contact');
+const Request = require('../models/contact');
 
-exports.opretContact = function (emne, kundeEmail, kundeNavn, kundeTlf, besked, dato, status) {
-    return Contact.create({
+exports.opretRequest = function (emne, kundeEmail, kundeNavn, kundeTlf, besked, dato, status) {
+    return Request.create({
         emne,
         kundeEmail,
         kundeNavn,
@@ -12,10 +12,10 @@ exports.opretContact = function (emne, kundeEmail, kundeNavn, kundeTlf, besked, 
     })
 }
 
-exports.hentContacts = async function () {
-    return await Contact.find().exec();
+exports.hentRequests = async function () {
+    return await Request.find().exec();
 }
 
-exports.hentContactPåDato = async function (dato) {
-    return await Contact.find().where('dato').equals(dato).exec();
+exports.hentRequestPåDato = async function (dato) {
+    return await Request.find().where('dato').equals(dato).exec();
 }
