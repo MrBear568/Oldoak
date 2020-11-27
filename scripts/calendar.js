@@ -20,14 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
         locale: 'dk',
         weekNumbers: true,
         showNonCurrentDates: false,
-        // dayRender: async function (date, cell) {
-        //     let bookinger = await fetch('http://localhost:8080/api/bookinger');
-        //     let data = bookinger.json();
-        //     console.log(data)
-        //     for (d of data) {
-        //         console.log(d);
-        //     }
-        // },
         dateClick: function (info) {
             let valgtDato = info.dateStr;
             let datoTA = document.getElementById('dato');
@@ -36,6 +28,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // calendar.addEventSource();
+    calendar.dayRender = async function (date, cell) {
+        let bookinger = await fetch('http://localhost:8080/api/bookinger');
+        let data = bookinger.json();
+        for (d of data) {
+            let jsonDato = new Date();
+            let jsondd = String(d.getDate()).padStart(2, '0');
+            let jsonmm = String(d.getMonth() + 1).padStart(2, '0');
+            let jsonyyyy = d.getFullYear();
+            jsonDato = jsonyyyy + '-' + jsonmm + '-' + jsondd;
+            if (jsonDato === date) {
+                cell.ccs("background-color", "red");
+            }
+        }
+    }
     calendar.render();
 });
 
