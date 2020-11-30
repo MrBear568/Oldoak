@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
         displayEventEnd: true,
         contentHeight: 600,
         height: 430,
+        width: 100,
         selectable: true,
         events: opretEvents(),
         unselectAuto: true,
