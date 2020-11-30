@@ -3,7 +3,6 @@ const router = express.Router();
 const controller = require('../controllers/contact');
 const Mail = require('../models/mail');
 const nodemailer = require('nodemailer');
-const Alert = require('js-alert');
 let today = new Date();
 let dd = String(today.getDate()).padStart(2, '0');
 let mm = String(today.getMonth() + 1).padStart(2, '0');
