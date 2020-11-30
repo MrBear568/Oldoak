@@ -22,12 +22,6 @@
     grid-row: 2;
 }
 
-.errorlabels {
-    grid-column: 2;
-    grid-row: 2;
-    margin-bottom: 50px;
-}
-
 input {
     margin-bottom: 50px;
 }
@@ -46,5 +40,5 @@ input {
 }
 
 label {
-    color: red;
+    color: white;
 }
