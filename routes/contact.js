@@ -3,6 +3,7 @@ const router = express.Router();
 const controller = require('../controllers/contact');
 const Mail = require('../models/mail');
 const nodemailer = require('nodemailer');
+const Alert = require('js-alert');
 let today = new Date();
 let dd = String(today.getDate()).padStart(2, '0');
 let mm = String(today.getMonth() + 1).padStart(2, '0');
@@ -48,7 +49,14 @@ router.post('/contact', async (req, res) => {
                 from: 'owmailbot@gmail.com',
                 to: 'mikahoejegaard@gmail.com',
                 subject: emne,
-                text: besked
+                text: besked + '\n' +
+                    'Ønsket dato: ' + dato + '\n' + '\n' +
+                    'Med venlig hilsen,' + '\n'
+                    + navn + '\n' +
+
+                    '\n' + '\n' +
+                    'Email: ' + email + '\n' +
+                    'Tlf. nummer: ' + tlfnummer
             }
 
             transporter.sendMail(mailOptions, function (error, info) {

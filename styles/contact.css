@@ -18,9 +18,14 @@
 }
 
 .kundeInfo {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.errorlabels {
     grid-column: 2;
     grid-row: 2;
-    padding-left: 70px;
+    margin-bottom: 50px;
 }
 
 input {
