@@ -4,23 +4,7 @@ let mm = String(today.getMonth() + 1).padStart(2, '0');
 let yyyy = today.getFullYear();
 today = yyyy + '-' + mm + '-' + dd;
 
-// let dato1 = {
-//     start: '2020-12-01',
-//     display: 'background',
-//     color: 'red'
-// };
-// let dato2 = {
-//     start: '2020-12-05',
-//     display: 'background',
-//     color: 'red'
-// }
-
-// let array = [];
-// array.push(dato1);
-// array.push(dato2);
-// console.log(array)
-
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     let calendarEl = document.getElementById('calendar');
     calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
@@ -31,9 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
         displayEventEnd: true,
         contentHeight: 600,
         height: 430,
-        width: 100,
         selectable: true,
-        events: opretEvents(),
+        events: await opretEvents(),
         unselectAuto: true,
         locale: 'dk',
         weekNumbers: true,
@@ -44,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
             datoTA.value = valgtDato;
         },
     });
-
     calendar.render();
 });
 
@@ -58,12 +40,12 @@ opretEvents = async function () {
             display: 'background',
             color: 'red'
         };
-        console.log(eventObj);
         array.push(eventObj);
     }
-    console.log(array);
+    console.log(array)
     return array;
 }
+
 
 let eTFObject = {
     hour: '2-digit',
