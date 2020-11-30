@@ -17,7 +17,7 @@ exports.opretLogin = function(username, password) {
     return newLogin;
 }
 
-exports.getLogins = function() {
+exports.getLogins = async function() {
     return Login.find().exec()
 }
 

@@ -21,7 +21,12 @@ router.post('/login', async (req, res) => {
     password: req.body.password
     }
 
-    const logins = controller.getLogins();
+    //skal pakkes ud
+    await controller.getLogins().then((resolve, reject) => {
+        let logins = (resolve.username, resolve.password);
+        return controller.getLogins(resolve.username, resolve.password)
+        .catch(fejl => console.log('fejl' + fejl))
+    });
     const checkUser = controller.checkUser(user);
 
     console.log(user);
