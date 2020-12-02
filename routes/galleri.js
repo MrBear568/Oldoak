@@ -3,18 +3,55 @@ const { pathToFileURL } = require('url');
 const router = express.Router();
 const fs = require('fs').promises
 
-
-
 router.get('/galleri', async (req, res) =>{
-    billede = await fs.readdir(__dirname + '/billeder');
-    res.render('galleri');
-    //{filnavne}
+    filnavne = "";
+    res.render('galleri', {filnavne});
 })
 
 router.post('/galleri', async (req, res) =>{
-    let test = req.body.sommer;
-    if(test === undefined){
-        console.log("den kører på: " + test);
+    let sommer = req.body.sommer;
+    let vinter = req.body.vinter;
+    let efterår = req.body.efterår;
+    let forår = req.body.forår;
+    let testKnap = req.body.ses;
+
+    if(testKnap !== undefined){
+
+        let el = document.querySelector("#knap");
+        el.style.backgroundColor = "#D93600";
+
+        /*
+       document.querySelectorAll('.accordian__button').forEach(button =>{
+           button.addEventListener('click', () =>{
+               const accordianContent = button.nextElementSibling;
+
+               button.classList.toggle('accordian__button--active');
+
+               if(button.classList.contains('accordian__button--active')){
+                   accordianContent.style.maxHeight = accordianContent.scrollHeight + 'px'; 
+               } else {
+                   accordianContent.style.maxHeight = 0; 
+               }
+           })
+       })
+       */
+    }
+
+    if(sommer !== undefined){
+        let filnavne = await fs.readdir(__dirname + "/billeder/sommer");
+        console.log(filnavne)
+        res.render('galleri', {filnavne});
+    }
+    if(vinter !== undefined){
+        let filnavne = await fs.readdir(__dirname + "/billeder/vinter");
+        console.log(filnavne)
+        res.render('galleri', {filnavne});
+    }
+    if(efterår !== undefined){
+        console.log('efterår');
+    }
+    if(forår !== undefined){
+        console.log('forår');
     }
 })
 

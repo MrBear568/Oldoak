@@ -9,12 +9,22 @@ html
         div(class="samlet")   
             //- Sådan laves en kommentar  
         form(method="post" action="/galleri")
-            button(name="sommer") Sommmer
+            button(name="sommer1" id="knap") Sommmer
             img(src="/static/pictures/galleri/Screenshot_1.png" class="sæsonbilleder")
-            button Vinter
+            button(name="vinter" id="knap") Vinter
             img(src="/static/pictures/galleri/Screenshot_1.png" class="sæsonbilleder")
-            button Efterår
+            button(name="efterår" id="knap") Efterår
             img(src="/static/pictures/galleri/Screenshot_1.png" class="sæsonbilleder")
-            button Forår
+            button(name="forår" id="knap") Forår
             img(src="/static/pictures/galleri/Screenshot_1.png" class="sæsonbilleder")
+
+            div(class="accordian")
+            button(type="buttons" class="accordian__button" name="ses") udvig
+            div(class="accordian__content" name="content")
+                p Dette er et stykke tekst
+        
+        each link in filnavne
+                    ul
+                    h2= link
+                    img(src="/static/pictures/galleri/" + link) 
     include footer.pug

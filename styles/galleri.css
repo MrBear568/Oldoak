@@ -5,13 +5,13 @@ form{
     margin-left: 14%;
 }
 
-button:focus{
+#knap:focus{
     outline:0px;
     }
 
 
 
-button{
+#knap{
     margin-top: 30%;
     grid-row-start: 1;
     margin-right: 20%;
@@ -30,4 +30,32 @@ button{
     grid-row-start: 2;
     height: 180;
     float: left;
+}
+
+.accordian__button{
+    display: block;
+    width: 100px;
+    padding: 15px; 
+    border: none; 
+    outline: none;
+    cursor: pointer;
+    background: #333333;
+    color: #ffffff;
+    text-align: left;
+    transition: background 0.2s;
+}
+
+.accordian__button::after{
+    content: '\25be';
+    float: right;
+    transform: scale(1,5);
+}
+
+.accordian__button--active {background: #555555}
+.accordian__button--active::after { content: '\25b4'}
+
+.accordian__content{
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s; 
 }
