@@ -13,13 +13,6 @@ router.post('/galleri', async (req, res) =>{
     let vinter = req.body.vinter;
     let efterår = req.body.efterår;
     let forår = req.body.forår;
-    let testKnap = req.body.ses;
-
-    if(testKnap !== undefined){
-
-        let el = document.querySelector("#knap");
-        el.style.backgroundColor = "#D93600";
-
         /*
        document.querySelectorAll('.accordian__button').forEach(button =>{
            button.addEventListener('click', () =>{
@@ -35,7 +28,7 @@ router.post('/galleri', async (req, res) =>{
            })
        })
        */
-    }
+    
 
     if(sommer !== undefined){
         let filnavne = await fs.readdir(__dirname + "/billeder/sommer");

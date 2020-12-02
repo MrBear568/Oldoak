@@ -18,10 +18,11 @@ html
             button(name="forår" id="knap") Forår
             img(src="/static/pictures/galleri/Screenshot_1.png" class="sæsonbilleder")
 
-            div(class="accordian")
-            button(type="buttons" class="accordian__button" name="ses") udvig
-            div(class="accordian__content" name="content")
-                p Dette er et stykke tekst
+            div(class="accordion")
+                input(type="radio" name="example_accordion" id="section1" class="accordion__input")
+                label(for="section1" class="accordion_label") section1
+                div(class="accordion__content")
+                    p dette er noget text for at lave et eksemepel... 
         
         each link in filnavne
                     ul
