@@ -9,17 +9,17 @@ header{
 
 .top{
     text-align: center;
+    float: center;
     margin-bottom: 1%;
 }
 
 .couple{
-    height: 450;
-    margin-right: 5%;
+    height: 600;
+    margin-left: 1%;
     margin-bottom: 2%;
 }
 
 #quote{
-    margin-right: 5%;
     font-style: italic;
 }¨
 
@@ -28,12 +28,12 @@ header{
 }
 
 h1{
-    margin-left:20%;
+    margin-left:20.5%;
     margin-bottom: 3%;
 }
 
 #welcomeText{
-    margin-left:20%;
+    margin-left:20.5%;
     width: 30%;
     font-style: italic;
 }
@@ -41,7 +41,7 @@ h1{
 .couple2{
     height: 550;
     float: right;
-    margin-right: 20%;
+    margin-right: 19.5%;
     margin-top: 2%;
 }
 

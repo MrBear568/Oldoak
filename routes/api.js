@@ -6,11 +6,11 @@ router.get('/', (req, res) => {
 
 })
 
-router.get('/api/bookinger', async (req, res) => {
+router.get('/api/requests', async (req, res) => {
     try {
-        const bookinger = await controller.hentBookinger();
-        const bookingerJSON = JSON.stringify(bookinger);
-        res.send(bookingerJSON)
+        const requests = await controller.hentRequests();
+        const requestsJSON = JSON.stringify(requests);
+        res.send(requestsJSON);
     } catch (error) {
         console.log(error);
     }

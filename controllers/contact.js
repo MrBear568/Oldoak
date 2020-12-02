@@ -1,21 +1,35 @@
-const Contact = require('../models/contact');
+const Request = require('../models/contact');
 
-exports.opretContact = function (emne, kundeEmail, kundeNavn, kundeTlf, besked, dato, status) {
-    return Contact.create({
-        emne,
-        kundeEmail,
-        kundeNavn,
-        kundeTlf,
-        besked,
-        dato,
-        status
+// exports.opretRequest = function (emne, kundeEmail, kundeNavn, kundeTlf, besked, dato, status) {
+//     return Request.create({
+//         emne,
+//         kundeEmail,
+//         kundeNavn,
+//         kundeTlf,
+//         besked,
+//         dato,
+//         status
+//     })
+// }
+
+exports.opretRequest = function (emne, kundeEmail, kundeNavn, kundeTlf, besked, dato, status) {
+    const newRequest = Request ({
+        emne: emne,
+        kundeEmail: kundeEmail,
+        kundeNavn: kundeNavn,
+        kundeTlf: kundeTlf,
+        besked: besked,
+        dato: dato,
+        status: status
     })
+    newRequest.save();
+    return newRequest;
 }
 
-exports.hentContacts = async function () {
-    return await Contact.find().exec();
+exports.hentRequests = async function () {
+    return await Request.find().exec();
 }
 
-exports.hentContactPåDato = async function (dato) {
-    return await Contact.find().where('dato').equals(dato).exec();
+exports.hentRequestPåDato = async function (dato) {
+    return await Request.find().where('dato').equals(dato).exec();
 }

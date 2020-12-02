@@ -27,8 +27,11 @@ router.post('/contact', async (req, res) => {
         console.log(dato, today)
         if (dato <= today) {
             console.log('Datoen er før');
+        } else if (emne.length === 0) {
+            let emneerror = document.getElementById('emneerror');
+            emneerror.innerHTML = '*';
         } else {
-            await controller.opretContact(emne, email, navn, tlfnummer, besked, dato).then(() => {
+            await controller.opretRequest(emne, email, navn, tlfnummer, besked, dato).then(() => {
                 res.redirect('/contact');
 
             });
@@ -48,7 +51,14 @@ router.post('/contact', async (req, res) => {
                 from: 'owmailbot@gmail.com',
                 to: 'mikahoejegaard@gmail.com',
                 subject: emne,
-                text: besked
+                text: besked + '\n' +
+                    'Ønsket dato: ' + dato + '\n' + '\n' +
+                    'Med venlig hilsen,' + '\n'
+                    + navn + '\n' +
+
+                    '\n' + '\n' +
+                    'Email: ' + email + '\n' +
+                    'Tlf. nummer: ' + tlfnummer
             }
 
             transporter.sendMail(mailOptions, function (error, info) {

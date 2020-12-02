@@ -6,46 +6,46 @@ header{
 .grid{
     display: grid;
     grid-template-rows: 6;
-    grid-template-columns: 25% 25% 5% 20% 25%;
 }
 
 .box1{
-    grid-column-start: 2;
-    float: left;
+    text-align: left;
+    margin-left: 20%;
 }
 
 .box2{
-    grid-column-start: 4;
-    float: right;
+    margin-right: 20%;
 }
 
 h1{
-    grid-row-start: 1; 
     border: solid; 
+    width: 31%;
 }
 
 h2{
-    grid-row-start: 2; 
+    width: 31%;
 }
 
 h3{
-    grid-row-start: 3; 
+    width: 31%;
 }
 
 #mail{
-    grid-row-start: 4; 
+    width: 31%;
 }
 
 #distance{
-    grid-row-start: 5; 
     border-top: solid;
+    width: 31%;
 }
 
 #info{
-    grid-row-start: 6; 
+    width: 33%;
 }
 
 .evita{
-    margin-top: 25%;
-    height: 350;
+    height: 450;
+    position: absolute;
+    top: 24%;
+    right: 20%;
 }

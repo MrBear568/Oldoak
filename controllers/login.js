@@ -1,13 +1,23 @@
 const Login = require('../models/login');
 
+// exports.opretLogin = function(username, password) {
+//     return Login.create({
+//         username,
+//         password
+//     })
+// }
+
 exports.opretLogin = function(username, password) {
-    return Login.create({
-        username,
-        password
+    const newLogin = Login ({
+        username: username,
+        password: password
     })
+
+    newLogin.save();
+    return newLogin;
 }
 
-exports.getLogins = function() {
+exports.getLogins = async function() {
     return Login.find().exec()
 }
 

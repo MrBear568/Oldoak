@@ -4,7 +4,7 @@ let mm = String(today.getMonth() + 1).padStart(2, '0');
 let yyyy = today.getFullYear();
 today = yyyy + '-' + mm + '-' + dd;
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     let calendarEl = document.getElementById('calendar');
     calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
@@ -14,29 +14,38 @@ document.addEventListener('DOMContentLoaded', function () {
         eventTimeFormat: eTFObject,
         displayEventEnd: true,
         contentHeight: 600,
+        height: 430,
         selectable: true,
+        events: await opretEvents(),
         unselectAuto: true,
         locale: 'dk',
         weekNumbers: true,
         showNonCurrentDates: false,
-        // dayRender: async function (date, cell) {
-        //     let bookinger = await fetch('http://localhost:8080/api/bookinger');
-        //     let data = bookinger.json();
-        //     console.log(data)
-        //     for (d of data) {
-        //         console.log(d);
-        //     }
-        // },
         dateClick: function (info) {
             let valgtDato = info.dateStr;
             let datoTA = document.getElementById('dato');
             datoTA.value = valgtDato;
         },
     });
-
-    // calendar.addEventSource();
     calendar.render();
 });
+
+opretEvents = async function () {
+    let array = [];
+    let requests = await fetch('http://localhost:8080/api/requests');
+    let jsondata = await requests.json();
+    for (d of jsondata) {
+        let eventObj = {
+            start: d.dato.slice(0, 10),
+            display: 'background',
+            color: 'red'
+        };
+        array.push(eventObj);
+    }
+    console.log(array)
+    return array;
+}
+
 
 let eTFObject = {
     hour: '2-digit',
