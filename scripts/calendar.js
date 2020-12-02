@@ -36,9 +36,9 @@ opretEvents = async function () {
     let jsondata = await requests.json();
     for (d of jsondata) {
         let eventObj = {
-            start: d.dato.slice(0, 10),
+            start: d.dato,
             display: 'background',
-            color: 'red'
+            color: 'orange'
         };
         array.push(eventObj);
     }
