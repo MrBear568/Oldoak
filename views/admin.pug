@@ -1,22 +1,22 @@
 html(lang="dk")
     style
-
+        include ../styles/admin.css
     header
         title admin
         meta(charset="UTF-8")
     body
         h1 Admin side
         form(method="post" action="/admin")
-            button(type="submit") booking
+            button(class= "booking" type="submit") booking
                 booking
-            button(type="submit") galleri
+            button(class= "galleri" type="submit") galleri
                 galleri
-            button(type="submit") forside
+            button(class= "forside" type="submit") forside
                 forside
-            button(type="submit") faq
+            button(class= "faq" type="submit") faq
                 faq
-            button(type="submit") ommig
+            button(class= "ommig" type="submit") ommig
                 ommig
-            button(type="submit") contakt
+            button(class= "contakt" type="submit") contakt
                 contakt
 
