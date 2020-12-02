@@ -7,21 +7,16 @@ html(lang="dk")
     body
         h1 Admin side
         form(method="post" action="/admin")
-            button(class= "booking" type="submit" onclick="bookingDirect()") booking
+            button(type="submit" name="booking") booking
                 booking
-            button(class= "galleri" type="submit") galleri
+            button(type="submit" name="galleri") galleri
                 galleri
-            button(class= "forside" type="submit") forside
+            button(type="submit" name="forside") forside
                 forside
-            button(class= "faq" type="submit") faq
+            button(type="submit" name="faq") faq
                 faq
-            button(class= "ommig" type="submit") ommig
+            button(type="submit" name="ommig") ommig
                 ommig
-            button(class= "contakt" type="submit") contakt
+            button(type="submit" name="contact") contakt
                 contakt
-        
-        script
-            function bookingDirect() {
-                admin="adminbooking.pug"
-            }
 
