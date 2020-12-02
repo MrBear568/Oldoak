@@ -1,8 +1,22 @@
 html(lang="dk")
     style
-
+        include ../styles/admin.css
     header
         title admin
         meta(charset="UTF-8")
     body
         h1 Admin side
+        form(method="post" action="/admin")
+            button(type="submit" name="booking") booking
+                booking
+            button(type="submit" name="galleri") galleri
+                galleri
+            button(type="submit" name="forside") forside
+                forside
+            button(type="submit" name="faq") faq
+                faq
+            button(type="submit" name="ommig") ommig
+                ommig
+            button(type="submit" name="contact") contakt
+                contakt
+
