@@ -51,6 +51,35 @@ router.get('/admin', async (req,res) => {
         res.redirect('/login')
     }
 });
+// adminbooking pug render route
+router.get('/admin/booking', async (req,res) => {
+    res.render('adminbooking')
+});
+
+// admingalleri pug render route
+router.get('/admin/galleri', async (req,res) => {
+    res.render('admingalleri')
+});
+
+// adminforside pug render route
+router.get('/admin/forside', async (req,res) => {
+    res.render('adminforside')
+});
+
+// adminfaq pug render route
+router.get('/admin/faq', async (req,res) => {
+    res.render('adminfaq')
+});
+
+// adminommig pug render route
+router.get('/admin/ommig', async (req,res) => {
+    res.render('adminommig')
+});
+
+// admincontakt pug render route
+router.get('/admin/contakt', async (req,res) => {
+    res.render('contakt')
+});
 
 
 /*

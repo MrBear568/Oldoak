@@ -7,7 +7,7 @@ html(lang="dk")
     body
         h1 Admin side
         form(method="post" action="/admin")
-            button(class= "booking" type="submit") booking
+            button(class= "booking" type="submit" onclick="bookingDirect()") booking
                 booking
             button(class= "galleri" type="submit") galleri
                 galleri
@@ -19,4 +19,9 @@ html(lang="dk")
                 ommig
             button(class= "contakt" type="submit") contakt
                 contakt
+        
+        script
+            function bookingDirect() {
+                admin="adminbooking.pug"
+            }
 
