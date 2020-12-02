@@ -22,28 +22,26 @@ html(lang="en")
             p Mobil: 53816564
         div(class='kundeInfo')
             form(action="/contact", method="post")
-                input(type="text", name="emne", placeholder="Emne (Bryllup, konfir. osv.)") 
+                input(type="text", name="emne", placeholder="Emne (Bryllup, konfir. osv.)", required)
+                label(for="emne", id="emneerror")
                 br
                 input(type="email", name="email", placeholder="E-mail")
+                label(for="email", id="emailerror")
                 br
                 input(type="text", name="navn", placeholder="Navn")
+                label(for="navn", id="navnerror")
                 br
                 input(type="number", name="tlfNummer", placeholder="Telefonnummer")
+                labelbefore(for="number", id="tlfNummererror")
                 br
                 textarea(name="besked", id="besked", cols="30", rows="10", placeholder="Din besked til Oaldoak Weddings, heriblandt ønsker eller specielle behov.")
                 br
-                input(type="text", name="dato", id="dato", placeholder="Vælg dato i kalender")
+                input(type="text", name="dato", id="dato", placeholder="Vælg dato i kalender", readonly)
+                label(for="dato", id="datoerror")
                 br
-                button(type="submit", name="submit", onclick="alertFunction()") Send formular
+                button(type="submit", name="submit", id="submit", onclick="alertFunction()") Send formular
                     script
                         include ../scripts/alert.js
-                        
-        div(class='errorlabels')
-            label(for="emne", id="emneerror")
-            label(for="email", id="emailerror")
-            label(for="navn", id="navnerror")
-            label(for="number", id="tlfNummererror")
-            label(for="dato", id="datoerror")
         div(class='fullCalendar', id='calendar', style="width: 900px;")
             #calendar
     include footer.pug
