@@ -28,6 +28,7 @@ const db = mongoose.connection
 db.on('error', error => console.log(error))
 db.once('open', () => console.log('Connected to mongoose'))
 
+
 //Routes
 // FAQ 
 const fagRoute = require('./routes/fagRoute');
