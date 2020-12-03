@@ -13,7 +13,9 @@ html
                 each pakkelosning in pakkelosninger
                     div(class='column')
                         p(class= 'navn')= pakkelosning.pakkeNavn
+                        p(class= 'tid')= pakkelosning.tid
                         p(class= 'pris')= pakkelosning.pris
+                        p(class= 'timepris')= pakkelosning.timePris
                         p(class= 'beskrivelse')= pakkelosning.beskrivelse
         include footer.pug
                     
