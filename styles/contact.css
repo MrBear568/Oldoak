@@ -9,18 +9,23 @@
     /* margin-top: 10%; */
     grid-column: 1/2;
     grid-row: 2;
+    font-family: "Didot", Times, Serif;
 }
 
 .OWInfo {
     grid-column: 1/3;
     grid-row: 2;
     text-align: center;
+    font-family: "Didot", Times, Serif;
 }
+
 
 .kundeInfo {
     grid-column: 2;
     grid-row: 3;
-    align-items: top;
+    margin-top: -75;
+    margin-left: 200;
+    font-family: "Didot", Times, Serif;
 }
 
 .fullCalendar {
