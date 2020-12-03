@@ -1,4 +1,4 @@
-const Request = require('../models/contact');
+const Request = require('../models/kontakt');
 
 exports.opretRequest = function (emne, kundeEmail, kundeNavn, kundeTlf, besked, dato, status) {
     return Request.create({

@@ -48,8 +48,8 @@ const galleri = require('./routes/galleri')
 app.use('/', galleri);
 
 // booking
-const contactRoute = require('./routes/contact');
-app.use('/', contactRoute);
+const kontaktRoute = require('./routes/kontakt');
+app.use('/', kontaktRoute);
 
 //api
 const apiRoute = require('./routes/api');

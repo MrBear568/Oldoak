@@ -4,13 +4,13 @@ const fs = require('fs').promises;
 
 router.get('/', async (req, res) =>{
     try {
-        res.redirect('/home')
+        res.redirect('/hjem')
     } catch (error) {
         console.log(error)
     }
 })
 
-router.get('/home', async (req, res) =>{
+router.get('/hjem', async (req, res) =>{
     res.render('forside');
 })
 
