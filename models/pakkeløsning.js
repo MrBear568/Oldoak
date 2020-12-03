@@ -2,7 +2,9 @@ const mongoose = require('mongoose');
 
 const Pakkeløsning = new mongoose.Schema({
     pakkeNavn: String,
-    pris: Number,
+    tid: String,
+    pris: String,
+    timePris: String,
     beskrivelse: String
 })
 
