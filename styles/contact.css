@@ -27,7 +27,16 @@
     grid-column: 1;
     grid-row: 3;
     padding-left: 50px;
+    box-align: center;
 }
+
+
+
+/* button {
+    padding: 12px 32px;
+    cursor: pointer;
+    background-color: lightblue;
+} */
 
 /* #besked {
     resize: none;
@@ -35,6 +44,31 @@
     height: 100;
     margin-bottom: 50px;
 } */
+
+
+ /* Button */
+ .knappen {
+        color: #fff !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        background: #7dc5f5;
+        padding: 20px;
+        border-radius: 5px;
+        display: inline-block;
+        border: none;
+        transition: all 0.4s ease 0s;
+ }
+
+ .knappen:hover {
+    background: #052766;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+    }
+
+ 
 
 * {
     box-sizing: border-box;
@@ -47,17 +81,9 @@
     margin: 30px auto 0;
     display: block;
     background: #fff;
-    padding: 10px 50px 50px;
+    padding: 10px 500px;
   }
-  h2 {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-  h2 small {
-    font-weight: normal;
-    color: #888;
-    display: block;
-  }
+ 
   .footer {
     text-align: center;
   }
@@ -71,8 +97,8 @@
     margin-bottom: 45px;
   }
   input {
-    font-size: 18px;
-    padding: 10px 10px 10px 5px;
+    font-size:12px;
+    padding: 10px 10px 1px 5px;
     display: block;
     width: 300px;
     border: none;
@@ -85,7 +111,7 @@
   /* LABEL ======================================= */
   label {
     color: #999;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: normal;
     position: absolute;
     pointer-events: none;

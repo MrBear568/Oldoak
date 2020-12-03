@@ -23,27 +23,22 @@ router.post('/contact', async (req, res) => {
     const besked = req.body.besked;
     const dato = req.body.dato;
     try {
-        console.log(emne, email, navn, tlfnummer, besked, dato);
-        console.log(dato, today)
-
         await controller.opretRequest(emne, email, navn, tlfnummer, besked, dato).then(() => {
             res.redirect('/contact');
 
         });
         let mail = Mail.find().where('email').equals('owmailbot@gmail.com');
 
-        console.log(mail);
-
         let transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'owmailbot@gmail.com',
+                user: mail,
                 pass: 'gammeleg7700'
             }
         })
 
         let mailOptions = {
-            from: 'owmailbot@gmail.com',
+            from: mail,
             to: 'mikahoejegaard@gmail.com',
             subject: emne,
             text: besked + '\n' +

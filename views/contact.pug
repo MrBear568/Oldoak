@@ -56,15 +56,13 @@ html(lang="en")
                     span.highlight
                     span.bar
                     label Klik på dato i kalender (eller YYYY-MM-DD)
-            p.footer
-                |a 
-                a(href='https://scotch.io/tutorials/css/google-material-design-input-boxes-in-css3' target='_blank') tutorial
-                |by 
-                a(href='https://scotch.io' target='_blank') scotch.io
-            button(type="submit", name="submit", id="submit", onclick="alertFunction()") Send formular
+            button(type="submit", class='knappen', id="submit", onclick="alertFunction()") Send formular
                 script
                     include ../scripts/alert.js
-        div(class='fullCalendar', id='calendar', style="width: 900px;")
+            //- .button(type="submit", name="submit", id="submit", onclick="alertFunction()") Send formular
+            //-     a.example_a(href='add-website-here' target='_blank' rel='nofollow noopener') Send mig afsted
+            //- .button_cont(align='center')
+        div(class='fullCalendar', id='calendar', style="width: 700px;")
             #calendar
     include footer.pug
 
