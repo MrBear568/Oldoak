@@ -13,15 +13,13 @@ html(lang="en")
     body
     div(class="wrapper")
         div(class="info")
-            p Kalender der viser hvilke dage er tilgængelige.
-            p Orange   = Andre viser interesse for datoen.
-            p Rød      = Datoen er ikke tilgængelig.
-            p Hvis du ønsker at kontakte mig, kan du enten kontakte mig via min e-mail, tlf. nummer, eller udfylde en kontaktformular.
-            p Jeg vil derefter vende tilbage hurtigst muligt.
-
-        div(class='OWInfo')
-            P Email: oldoakevita@gmail.com
-            p Mobil: 53816564
+            br
+            span(class='orangeLabel') Orange 
+            p Andre viser interesse for datoen. 
+            p Desto mørkere orange betyder mere interesse for datoen.
+            p ______________________
+            span(class="redLabel") Rød
+            p Datoen er ikke tilgængelig.
         div(class='kundeInfo')
             form(action="/contact", method="post")
                 .container
@@ -61,7 +59,7 @@ html(lang="en")
             //- .button(type="submit", name="submit", id="submit", onclick="alertFunction()") Send formular
             //-     a.example_a(href='add-website-here' target='_blank' rel='nofollow noopener') Send mig afsted
             //- .button_cont(align='center')
-        div(class='fullCalendar', id='calendar', style="width: 700px;")
+        div(class='fullCalendar', id='calendar', style="width: 850px;")
             #calendar
     include footer.pug
 
