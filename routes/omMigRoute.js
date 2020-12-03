@@ -5,6 +5,7 @@ const controller = require('../controllers/language');
 router.get('/omMig', (req, res) =>{
    // let lang = controller.getLanguage();
    // console.log(lang)
+   const lang = req.session.sprog
     res.render('omMig');
 })
 

@@ -12,6 +12,6 @@ exports.setDansk = function() {
     window.location.reload();
 }
 
-exports.getLanguage = function() {
+exports.findSprog = function() {
     return english;
 }
