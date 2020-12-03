@@ -4,8 +4,8 @@ const router = express.Router();
 const fs = require('fs').promises
 
 router.get('/galleri', async (req, res) =>{
-    filnavne = "";
-    res.render('galleri', {filnavne});
+    billeder = "";
+    res.render('galleri', {billeder});
 })
 
 router.post('/galleri', async (req, res) =>{
@@ -13,39 +13,32 @@ router.post('/galleri', async (req, res) =>{
     let vinter = req.body.vinter;
     let efterår = req.body.efterår;
     let forår = req.body.forår;
-        /*
-       document.querySelectorAll('.accordian__button').forEach(button =>{
-           button.addEventListener('click', () =>{
-               const accordianContent = button.nextElementSibling;
-
-               button.classList.toggle('accordian__button--active');
-
-               if(button.classList.contains('accordian__button--active')){
-                   accordianContent.style.maxHeight = accordianContent.scrollHeight + 'px'; 
-               } else {
-                   accordianContent.style.maxHeight = 0; 
-               }
-           })
-       })
-       */
-    
 
     if(sommer !== undefined){
-        let filnavne = await fs.readdir(__dirname + "/billeder/sommer");
-        console.log(filnavne)
-        res.render('galleri', {filnavne});
+        let billeder = await fs.readdir(__dirname + "/billeder/sommer");
+        let overskrift = 'sommer'
+        console.log(billeder)
+        res.render('billeder', {overskrift, billeder});
     }
     if(vinter !== undefined){
-        let filnavne = await fs.readdir(__dirname + "/billeder/vinter");
-        console.log(filnavne)
-        res.render('galleri', {filnavne});
+        let billeder = await fs.readdir(__dirname + "/billeder/vinter");
+        let overskrift = 'vinter'
+        res.render('billeder', {overskrift, billeder});
     }
     if(efterår !== undefined){
-        console.log('efterår');
+        let billeder = await fs.readdir(__dirname + "/billeder/efterår");
+        let overskrift = 'efterår'
+        res.render('billeder', {overskrift, billeder});
     }
     if(forår !== undefined){
-        console.log('forår');
+        let billeder = await fs.readdir(__dirname + "/billeder/forår");
+        let overskrift = 'forår'
+        res.render('billeder', {overskrift, billeder});
     }
+})
+
+router.get('/galleri/billeder', async (req, res) =>{
+    res.render('billeder');
 })
 
 

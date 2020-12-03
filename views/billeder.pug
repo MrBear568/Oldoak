@@ -1,0 +1,12 @@
+
+html
+    style
+        include ../styles/billeder.css
+    header 
+        title billeder
+        include header.pug
+    body  
+        each billede in billeder 
+            img(src="/static/pictures/galleri/" + billede class="billeder")
+
+    include footer.pug

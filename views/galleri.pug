@@ -6,26 +6,19 @@ html
         include header.pug
         title galleri 
     body 
+        div(class="bText")
+            h1 Bryllupsgalleri
+            p Bryllupsbilleder er et af livets største minder. Derfor er det også vigtigt at vælge den rigtige fotograf. 
+            p Jeg har samlet mine billeder i 4 årstider, så du kan se stilen for den årstid dit bryllup ligger i. Klik på en af årstiderne for at se billederne. 
         div(class="samlet")   
             //- Sådan laves en kommentar  
         form(method="post" action="/galleri")
-            button(name="sommer1" id="knap") Sommmer
-            img(src="/static/pictures/galleri/Screenshot_1.png" class="sæsonbilleder")
-            button(name="vinter" id="knap") Vinter
-            img(src="/static/pictures/galleri/Screenshot_1.png" class="sæsonbilleder")
+            button(name="sommer" id="knap") Sommer
+            img(src="/static/pictures/galleri/sommer1.png" class="sæsonbilleder")
             button(name="efterår" id="knap") Efterår
-            img(src="/static/pictures/galleri/Screenshot_1.png" class="sæsonbilleder")
-            button(name="forår" id="knap") Forår
-            img(src="/static/pictures/galleri/Screenshot_1.png" class="sæsonbilleder")
-
-            div(class="accordion")
-                input(type="radio" name="example_accordion" id="section1" class="accordion__input")
-                label(for="section1" class="accordion_label") section1
-                div(class="accordion__content")
-                    p dette er noget text for at lave et eksemepel... 
-        
-        each link in filnavne
-                    ul
-                    h2= link
-                    img(src="/static/pictures/galleri/" + link) 
+            img(src="/static/pictures/galleri/efterår1.png" class="sæsonbilleder")
+            button(name="vinter" id="knap") Vinter
+            img(src="/static/pictures/galleri/vinter1.png" class="sæsonbilleder")
+            button(name="forår" id="knap") Forår 
+            img(src="/static/pictures/galleri/forår1.png" class="sæsonbilleder")
     include footer.pug

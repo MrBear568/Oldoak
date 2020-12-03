@@ -30,7 +30,7 @@ db.once('open', () => console.log('Connected to mongoose'))
 
 //Routes
 // FAQ 
-const fagRoute = require('./routes/fagRoute');
+const fagRoute = require('./routes/faqRoute');
 const omMigRoute = require('./routes/omMigRoute')
 const forsideRoute = require('./routes/forsideRoute')
 app.use('/', fagRoute);
