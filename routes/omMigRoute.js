@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs').promises;
+const controller = require('../controllers/language');
 
-router.get('/omMig', async (req, res) =>{
-    //let pics = await fs.readdir(__dirname + '../pictures')
+router.get('/omMig', (req, res) =>{
+   // let lang = controller.getLanguage();
+   // console.log(lang)
     res.render('omMig');
 })
 
