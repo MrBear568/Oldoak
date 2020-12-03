@@ -6,4 +6,9 @@ html(lang="dk")
         meta(charset="UTF-8")
     body
         h1 Admin faq side
+        form(method="post" action="/admin/faq")
+            input(type="text" name="question" placeholder="Spørgsmål")
+            input(type="text" name="answer" placeholder="Svar")
+            button(type="submit") gem
+                gem
     
