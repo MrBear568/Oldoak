@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         },
         eventTimeFormat: eTFObject,
         displayEventEnd: true,
-        contentHeight: 600,
-        height: 430,
+        contentHeight: 100,
+        height: 422,
         selectable: true,
         events: await opretEvents(),
         unselectAuto: true,
@@ -36,9 +36,9 @@ opretEvents = async function () {
     let jsondata = await requests.json();
     for (d of jsondata) {
         let eventObj = {
-            start: d.dato.slice(0, 10),
+            start: d.dato,
             display: 'background',
-            color: 'red'
+            color: 'orange'
         };
         array.push(eventObj);
     }

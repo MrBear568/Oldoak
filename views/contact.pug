@@ -13,7 +13,9 @@ html(lang="en")
     body
     div(class="wrapper")
         div(class="info")
-            p Herunder kan du se min kalender som fortæller om jeg er ledig på din ønskede dato.
+            p Kalender der viser hvilke dage er tilgængelige.
+            p Orange   = Andre viser interesse for datoen.
+            p Rød      = Datoen er ikke tilgængelig.
             p Hvis du ønsker at kontakte mig, kan du enten kontakte mig via min e-mail, tlf. nummer, eller udfylde en kontaktformular.
             p Jeg vil derefter vende tilbage hurtigst muligt.
 
@@ -22,27 +24,45 @@ html(lang="en")
             p Mobil: 53816564
         div(class='kundeInfo')
             form(action="/contact", method="post")
-                input(type="text", name="emne", placeholder="Emne (Bryllup, konfir. osv.)", required)
-                label(for="emne", id="emneerror")
-                br
-                input(type="email", name="email", placeholder="E-mail")
-                label(for="email", id="emailerror")
-                br
-                input(type="text", name="navn", placeholder="Navn")
-                label(for="navn", id="navnerror")
-                br
-                input(type="number", name="tlfNummer", placeholder="Telefonnummer")
-                labelbefore(for="number", id="tlfNummererror")
-                br
-                textarea(name="besked", id="besked", cols="30", rows="10", placeholder="Din besked til Oaldoak Weddings, heriblandt ønsker eller specielle behov.")
-                br
-                input(type="text", name="dato", id="dato", placeholder="Vælg dato i kalender", readonly)
-                label(for="dato", id="datoerror")
-                br
-                button(type="submit", name="submit", id="submit", onclick="alertFunction()") Send formular
-                    script
-                        include ../scripts/alert.js
-        div(class='fullCalendar', id='calendar', style="width: 900px;")
+                .container
+                form
+                 .group
+                    input(type="text", name="emne", id="emne", required)
+                    span.highlight
+                    span.bar
+                    label Emne (Bryllup, konfir. osv.)
+                .group
+                    input(type="email", name="email", id="email", required)
+                    span.highlight
+                    span.bar
+                    label Din e-mail
+                .group
+                    input(type="text", name="navn", id="navn", required)
+                    span.highlight
+                    span.bar
+                    label Dit navn
+                .group
+                    input(type="number", name="tlfNummer", id="tlfNummer", required)
+                    span.highlight
+                    span.bar
+                    label Dit tlf. nr.
+                .group
+                    input(type="text", name="besked", id="besked", required)
+                    span.highlight
+                    span.bar
+                    label Eventuelle spørgsmål, ønsker eller behov
+                .group
+                    input(type="text", name="dato", id="dato", required)
+                    span.highlight
+                    span.bar
+                    label Klik på dato i kalender (eller YYYY-MM-DD)
+            button(type="submit", class='knappen', id="submit", onclick="alertFunction()") Send formular
+                script
+                    include ../scripts/alert.js
+            //- .button(type="submit", name="submit", id="submit", onclick="alertFunction()") Send formular
+            //-     a.example_a(href='add-website-here' target='_blank' rel='nofollow noopener') Send mig afsted
+            //- .button_cont(align='center')
+        div(class='fullCalendar', id='calendar', style="width: 700px;")
             #calendar
     include footer.pug
 
