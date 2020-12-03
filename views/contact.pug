@@ -25,8 +25,7 @@ html(lang="en")
         div(class='kundeInfo')
             form(action="/contact", method="post")
                 .container
-                form
-                 .group
+                .group
                     input(type="text", name="emne", id="emne", required)
                     span.highlight
                     span.bar
@@ -56,9 +55,9 @@ html(lang="en")
                     span.highlight
                     span.bar
                     label Klik på dato i kalender (eller YYYY-MM-DD)
-            button(type="submit", class='knappen', id="submit", onclick="alertFunction()") Send formular
-                script
-                    include ../scripts/alert.js
+                button(type="submit", class='knappen', id="submit", onclick="alertFunction()") Send formular
+                    script
+                        include ../scripts/alert.js
             //- .button(type="submit", name="submit", id="submit", onclick="alertFunction()") Send formular
             //-     a.example_a(href='add-website-here' target='_blank' rel='nofollow noopener') Send mig afsted
             //- .button_cont(align='center')
