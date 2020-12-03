@@ -11,7 +11,7 @@ today = yyyy + '-' + mm + '-' + dd;
 
 
 router.get('/kontakt', async (req, res) => {
-    res.render('kontakt', { title: 'Contact' });
+    res.render('kontakt', { title: 'Kontakt' });
 });
 
 router.post('/kontakt', async (req, res) => {
@@ -32,7 +32,7 @@ router.post('/kontakt', async (req, res) => {
             emneerror.innerHTML = '*';
         } else {
             await controller.opretRequest(emne, email, navn, tlfnummer, besked, dato).then(() => {
-                res.redirect('/contact');
+                res.redirect('/kontakt');
 
             });
             let mail = Mail.find().where('email').equals('owmailbot@gmail.com');

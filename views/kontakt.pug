@@ -4,7 +4,7 @@ html(lang="en")
     include header.pug
         script  
             include ../node_modules/fullcalendar/main.js
-            include ../scripts/calendar.js
+            include ../scripts/kalender.js
         style
             include ../node_modules/fullcalendar/main.css
             include ../styles/kontakt.css
@@ -21,7 +21,7 @@ html(lang="en")
             span(class="redLabel") Rød
             p Datoen er ikke tilgængelig.
         div(class='kundeInfo')
-            form(action="/contact", method="post")
+            form(action="/kontakt", method="post")
                 .container
                 .group
                     input(type="text", name="emne", id="emne", required)
