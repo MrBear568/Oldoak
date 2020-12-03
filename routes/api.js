@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/contact');
+const controller = require('../controllers/kontakt');
 
 router.get('/', (req, res) => {
 

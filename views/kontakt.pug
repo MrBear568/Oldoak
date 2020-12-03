@@ -1,0 +1,68 @@
+html(lang="en")
+    head
+    title Kontakt
+    include header.pug
+        script  
+            include ../node_modules/fullcalendar/main.js
+            include ../scripts/calendar.js
+        style
+            include ../node_modules/fullcalendar/main.css
+            include ../styles/contact.css
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    body
+    div(class="wrapper")
+        div(class="info")
+            p Kalender der viser hvilke dage er tilgængelige.
+            p Orange   = Andre viser interesse for datoen.
+            p Rød      = Datoen er ikke tilgængelig.
+            p Hvis du ønsker at kontakte mig, kan du enten kontakte mig via min e-mail, tlf. nummer, eller udfylde en kontaktformular.
+            p Jeg vil derefter vende tilbage hurtigst muligt.
+
+        div(class='OWInfo')
+            P Email: oldoakevita@gmail.com
+            p Mobil: 53816564
+        div(class='kundeInfo')
+            form(action="/contact", method="post")
+                .container
+                .group
+                    input(type="text", name="emne", id="emne", required)
+                    span.highlight
+                    span.bar
+                    label Emne (Bryllup, konfir. osv.)
+                .group
+                    input(type="email", name="email", id="email", required)
+                    span.highlight
+                    span.bar
+                    label Din e-mail
+                .group
+                    input(type="text", name="navn", id="navn", required)
+                    span.highlight
+                    span.bar
+                    label Dit navn
+                .group
+                    input(type="number", name="tlfNummer", id="tlfNummer", required)
+                    span.highlight
+                    span.bar
+                    label Dit tlf. nr.
+                .group
+                    input(type="text", name="besked", id="besked", required)
+                    span.highlight
+                    span.bar
+                    label Eventuelle spørgsmål, ønsker eller behov
+                .group
+                    input(type="text", name="dato", id="dato", required)
+                    span.highlight
+                    span.bar
+                    label Klik på dato i kalender (eller YYYY-MM-DD)
+                button(type="submit", class='knappen', id="submit", onclick="alertFunction()") Send formular
+                    script
+                        include ../scripts/alert.js
+            //- .button(type="submit", name="submit", id="submit", onclick="alertFunction()") Send formular
+            //-     a.example_a(href='add-website-here' target='_blank' rel='nofollow noopener') Send mig afsted
+            //- .button_cont(align='center')
+        div(class='fullCalendar', id='calendar', style="width: 700px;")
+            #calendar
+    include footer.pug
+
+
