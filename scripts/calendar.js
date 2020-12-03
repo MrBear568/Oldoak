@@ -35,17 +35,25 @@ opretEvents = async function () {
     let requests = await fetch('http://localhost:8080/api/requests');
     let jsondata = await requests.json();
     for (d of jsondata) {
-        let eventObj = {
-            start: d.dato.slice(0, 10),
-            display: 'background',
-            color: 'orange'
-        };
-        array.push(eventObj);
+        if (d.status === false) {
+            let eventObjOrange = {
+                start: d.dato.slice(0, 10),
+                display: 'background',
+                color: 'orange'
+            };
+            array.push(eventObjOrange);
+        } else if (d.status === true) {
+            let eventObjRed = {
+                start: d.dato.slice(0, 10),
+                display: 'background',
+                color: 'red'
+            }
+            array.push(eventObjRed);
+        }
     }
     console.log(array)
     return array;
 }
-
 
 let eTFObject = {
     hour: '2-digit',
