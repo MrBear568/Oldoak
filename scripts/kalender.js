@@ -20,10 +20,19 @@ document.addEventListener('DOMContentLoaded', async function () {
         locale: 'dk',
         weekNumbers: true,
         showNonCurrentDates: false,
-        dateClick: function (info) {
-            let valgtDato = info.dateStr;
-            let datoTA = document.getElementById('dato');
-            datoTA.value = valgtDato;
+        dateClick: async function (info) {
+        let requests = await fetch('http://localhost:8080/api/requests');
+        let jsondata = await requests.json();
+        for (d of jsondata) {
+            if (d.dato.slice(0, 10) === info.dateStr && d.status === true) { 
+                alert('OBS: Datoen er ikke tilgængelig')
+                window.location.reload()
+            } else {
+                let valgtDato = info.dateStr;
+                let datoTA = document.getElementById('dato');
+                datoTA.value = valgtDato;
+                }
+            }    
         },
     });
     calendar.render();
