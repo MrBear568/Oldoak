@@ -1,17 +1,18 @@
 html(lang="en")
     head
     title Kontakt
-    include header.pug
-        script  
-            include ../node_modules/fullcalendar/main.js
-            include ../scripts/kalender.js
-        style
-            include ../node_modules/fullcalendar/main.css
-            include ../styles/kontakt.css
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    script  
+        include ../node_modules/fullcalendar/main.js
+        include ../scripts/kalender.js
+    style
+        include ../node_modules/fullcalendar/main.css
+        include ../styles/kontakt.css
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
     body
     div(class="wrapper")
+        div(class="header")
+            include header.pug
         div(class="info")
             br
             span(class='orangeLabel') Orange 
@@ -59,8 +60,9 @@ html(lang="en")
             //- .button(type="submit", name="submit", id="submit", onclick="alertFunction()") Send formular
             //-     a.example_a(href='add-website-here' target='_blank' rel='nofollow noopener') Send mig afsted
             //- .button_cont(align='center')
-        div(class='fullCalendar', id='calendar', style="width: 850px;")
+        div(class='fullCalendar', id='calendar')
             #calendar
-    include footer.pug
+        div(class='footer')
+            include footer.pug
 
 
