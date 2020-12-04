@@ -13,8 +13,6 @@ document.addEventListener('DOMContentLoaded', async function () {
         },
         eventTimeFormat: eTFObject,
         displayEventEnd: true,
-        contentHeight: 100,
-        height: 440,
         selectable: true,
         events: await opretEvents(),
         unselectAuto: true,
