@@ -2,10 +2,6 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/kontakt');
 
-router.get('/', (req, res) => {
-
-})
-
 router.get('/api/requests', async (req, res) => {
     try {
         const requests = await controller.hentRequests();
