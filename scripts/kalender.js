@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 opretEvents = async function () {
     let array = [];
-    let requests = await fetch('http://localhost:8080/api/requests');
+    let requests = await fetch('https://oldoak-weddings.herokuapp.com/api/requests');
     let jsondata = await requests.json();
     for (d of jsondata) {
         if (d.status === false) {
