@@ -23,45 +23,43 @@ router.post('/kontakt', async (req, res) => {
     const besked = req.body.besked;
     const dato = req.body.dato;
     try {
-        console.log(emne, email, navn, tlfnummer, besked, dato);
-        console.log(dato, today)
-            await controller.opretRequest(emne, email, navn, tlfnummer, besked, dato).then(() => {
-                res.redirect('/kontakt');
+        await controller.opretRequest(emne, email, navn, tlfnummer, besked, dato).then(() => {
+            res.redirect('/kontakt');
 
-            });
-            let mail = Mail.find().where('email').equals('owmailbot@gmail.com');
+        });
+        let mail = Mail.find().where('email').equals('owmailbot@gmail.com');
 
-            console.log(mail);
+        console.log(mail);
 
-            let transporter = nodemailer.createTransport({
-                service: 'gmail',
-                auth: {
-                    user: 'owmailbot@gmail.com',
-                    pass: 'gammeleg7700'
-                }
-            })
-
-            let mailOptions = {
-                from: 'owmailbot@gmail.com',
-                to: 'mikahoejegaard@gmail.com',
-                subject: emne,
-                text: besked + '\n' +
-                    'Ønsket dato: ' + dato + '\n' + '\n' +
-                    'Med venlig hilsen,' + '\n'
-                    + navn + '\n' +
-
-                    '\n' + '\n' +
-                    'Email: ' + email + '\n' +
-                    'Tlf. nummer: ' + tlfnummer
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'owmailbot@gmail.com',
+                pass: 'gammeleg7700'
             }
+        })
 
-            transporter.sendMail(mailOptions, function (error, info) {
-                if (error) {
-                    console.log(error);
-                } else {
-                    console.log('Mail er sendt: ' + info.response);
-                }
-            })
+        let mailOptions = {
+            from: 'owmailbot@gmail.com',
+            to: 'mikahoejegaard@gmail.com',
+            subject: emne,
+            text: besked + '\n' +
+                'Ønsket dato: ' + dato + '\n' + '\n' +
+                'Med venlig hilsen,' + '\n'
+                + navn + '\n' +
+
+                '\n' + '\n' +
+                'Email: ' + email + '\n' +
+                'Tlf. nummer: ' + tlfnummer
+        }
+
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Mail er sendt: ' + info.response);
+            }
+        })
     } catch (error) {
     }
 

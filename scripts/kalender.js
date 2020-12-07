@@ -29,10 +29,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                     window.location.reload()
                 } else {
                     let valgtDato = info.dateStr;
-                    console.log('Linje 32 eksikveres dateStr: ' + info.dateStr);
                     let datoTA = document.getElementById('dato');
                     datoTA.value = valgtDato;
-                    console.log('Linje 35 eksikveres - dateStr: ' + info.dateStr);
                 }
             }
         },
@@ -61,7 +59,6 @@ opretEvents = async function () {
             array.push(eventObjRed);
         }
     }
-    console.log(array)
     return array;
 }
 
