@@ -63,8 +63,8 @@ const loginRoute = require('./routes/login')
 app.use('/', loginRoute);
 
 // oprettelse af login
-const controller = require('./controllers/login')
-controller.opretLogin('admin', 'nimda')
+// const controller = require('./controllers/login')
+// controller.opretLogin('admin', 'nimda')
 
 //oprettelse af pakkeløsning
 // const controller = require('./controllers/pakkeløsning')
