@@ -27,9 +27,6 @@ router.post('/kontakt', async (req, res) => {
             res.redirect('/kontakt');
 
         });
-        let mail = Mail.find().where('email').equals('owmailbot@gmail.com');
-
-        console.log(mail);
 
         let transporter = nodemailer.createTransport({
             service: 'gmail',
