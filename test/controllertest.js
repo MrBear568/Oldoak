@@ -2,7 +2,7 @@ const assert = require('chai').assert
 const mail = require('../controllers/mail')
 const login = require('../controllers/login')
 const pakkeløsning = require('../controllers/pakkeløsning')
-const request = require('../controllers/contact')
+const request = require('../controllers/kontakt')
 
 describe('controller test - promise, oprettelse af mail med ejernavn og mail', function () {
     it('opretMail skulle retunere en ny mail', async function (){
@@ -24,10 +24,13 @@ describe('controller test - promise, oprettelse af login', function () {
   
 describe('controller test - promise, oprettelse af pakkeløsning', function () {
     it('opretLogin skulle retunere en ny pakkeløsning med pakkenavn, pris og beskrivelse', async function (){
-      const pakkeløsningResult = await pakkeløsning.opretPakkeløsning('SommerTilbud', 500,'Fra juni - Juli')
-      
+      const date = Date.now;
+      const pakkeløsningResult = await pakkeløsning.opretPakkeløsning('SommerTilbud', date, 500, 100,'Fra juni - Juli')
+
       assert.equal(pakkeløsningResult.pakkeNavn, 'SommerTilbud')
+      assert.equal(pakkeløsningResult.tid, date)
       assert.equal(pakkeløsningResult.pris, 500)
+      assert.equal(pakkeløsningResult.timePris, 100)
       assert.equal(pakkeløsningResult.beskrivelse, 'Fra juni - Juli')
     });
   });
